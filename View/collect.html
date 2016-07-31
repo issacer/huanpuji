@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--在移动端按比例缩放-->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
+    <!--<script type='text/javascript' src='__PUBLIC__/js/jquery-1.11.3.js' charset='utf-8'></script>
+    <script>var Zepto = jQuery</script>-->
+    <link rel="stylesheet" href="../Public/css/swiper.min.css">
+    <link rel="stylesheet" href="../Public/css/public.css"><!--public-->
+
+    <script src="../Public/js/jquery-1.11.3.js"></script>
+    <script src="../Public/js/swiper.jquery.min.js"></script>
+    <title>懐璞集</title>
+</head>
+<style>
+    .board-collect{
+        line-height: 1.5;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        top: 0; bottom: 0;
+        margin-top: 10px;
+        margin-bottom: 100px;
+        /*height: 100%;*/
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        /*padding-bottom: 105px;*/
+        /*border: 3px solid red;*/
+    }
+    .block-collect{
+        position: relative;background: rgba(214,214,216,1);
+        padding: 25px 45px 30px 45px;margin-bottom: 10px;
+        border-radius: 3px;
+    }
+    .block-collect div{
+        text-align: right;
+    }
+    .btn-del{
+        position: absolute;
+        top: 7px;right: 7px;
+        width: 30px;
+    }
+    button{
+        color: white;
+        background-color: #57585A;
+        border: none;
+        padding: 7px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    button:active{
+        background-color: #393939;
+    }
+    /*在三个复用的代码块的基础在添加样式*/
+    /*.block-disTip,#block-service,#board-personal,.menu-child{
+        background: rgba(62,62,63,1);
+    }*/
+    #board-personal,.area-service{
+        background: rgba(62,62,63,1);
+    }
+    .area-button a{
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+</style>
+<body>
+    <main class="board-collect">
+        <!--一个卡片-->
+        <div class="block-collect" data-id="2016030501">
+            <img class="btn-del" src="../Public/icons/close2.png">
+            <img style="width: 100%;" src="../Public/images/p2.jpg">
+            <h4>产品名称</h4>
+            <div>
+                <button class="btn-again">再去看一次</button>
+            </div>
+        </div>
+        <!--一个卡片-->
+        <div class="block-collect" data-id="2016030501">
+            <img class="btn-del" src="../Public/icons/close2.png">
+            <img style="width: 100%;" src="../Public/images/p2.jpg">
+            <h4>产品名称</h4>
+            <div>
+                <button class="btn-again">再去看一次</button>
+            </div>
+        </div>
+    </main>
+    <!--底部菜单（public）-->
+    <div class="bottom-menu">
+        <div class="item-pointSer">
+            <img class="btn-pointer" data-status="off" src="../Public/icons/pointI.png">
+        </div>
+        <ul>
+            <li id="btn-index"><div><img src="../Public/icons/home.png" alt="">首頁</div></li>
+            <li id="btn-display" onclick='location.href="abstract.php"'><div><img src="../Public/icons/ripe.png" alt="">陳列架</div></li>
+            <li id="btn-service" data-order="off"><div><img src="../Public/icons/service.png" alt="">客服</div></li>
+            <li id="btn-personal" data-order="off"><div><img src="../Public/icons/user.png" alt="">個人</div></li>
+        </ul>
+    </div>
+
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript">
+        $.ajax({url: "../Controller/TempController.php",
+            type: "post",
+            data: {func: "getDisplay"},
+            dataType: "text",
+            async: false,
+            success:function(res){
+                $("body").prepend(res);
+            }
+        });/*同步请求*/
+    </script><!--public-->
+    <script type="text/javascript" src="../Public/js/issac.js"></script><!--issac类库-->
+    <script type="text/javascript" src="../Public/js/public.js"></script>
+    <script type="text/javascript">
+        /*删除*/
+        $(".btn-del").click(function(){
+            if(confirm("确定删除该产品？")){
+                var id =$(this).parent().attr("data-id");
+                alert("delete id="+id);
+            }
+        });
+        /*再去看一次*/
+        $(".btn-again").click(function(){
+            var id =$(this).parent().parent().attr("data-id");
+            window.location.href="details.html?id="+id;
+        });
+    </script>
+</body>
+</html>

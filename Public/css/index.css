@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    position: relative;
+    height: 100%;
+}
+body{
+    overflow-y: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    color:#000;
+    width: 100%;
+    background-color: #3E3E3F;
+    font-family: Microsoft YaHei UI,Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+}
+
+/*----------------背景图片区域-----------------*/
+main{
+    height:100%;overflow-x: hidden;
+}
+.space-point{
+    position: absolute;
+    top: 10px;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+}
+.space-point span{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.swiper-slide{
+    height: 100%!important;
+}
+.slide-bg{
+    background: #3E3E3F;
+    overflow: hidden;
+}
+.slide-bg img{
+    /*min-width: 100%;*/
+    height: 100%;
+}
+
+/*-------------过渡面板/主图片------------------*/
+#board-transit{
+    background: white;position: absolute;top: 0;
+    z-index: 30;display: table;width: 100%;height: 100%;
+}
+.item-logo,.item-list{
+    display: none;
+}
+.block-indexImg{
+    display: table-cell;/*border: 1px solid red;*/
+    text-align: center;vertical-align: middle;
+}
+.block-indexImg img{
+    position: relative;
+    top: -30px;
+}
+/*过渡模块的底部系列图标*/
+.area-catena{
+    position: absolute;bottom: 30px;left: 0;
+    z-index: 31;overflow: hidden;
+    box-sizing: border-box;
+    /*border: 1px solid black;*/
+    width: 100%;padding-left: 20px;
+    padding-right: 20px;
+}
+.area-catena div{
+    float: left;
+    width: 20%;
+    text-align: center;
+    /*border: 1px solid red;*/
+}
+.area-catena img{
+    width: 40%;
+}

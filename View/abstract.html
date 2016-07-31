@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--在移动端按比例缩放-->
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
+    <!--<script type='text/javascript' src='__PUBLIC__/js/jquery-1.11.3.js' charset='utf-8'></script>
+    <script>var Zepto = jQuery</script>-->
+    <link rel="stylesheet" href="../Public/css/swiper.min.css">
+    <link rel="stylesheet" href="../Public/css/public.css"><!--public-->
+    <script src="../Public/js/jquery-1.11.3.js"></script>
+    <script src="../Public/js/swiper.jquery.min.js"></script>
+
+    <title>懐璞集</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    /*html,body{
+        height: 100%;
+    }
+    body{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #3E3E3F;
+    }*/
+    .block-ctt{
+        line-height: 1.5;
+        font-size: 16px;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        top: 0; bottom: 0;
+        /*height: 100%;*/
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        /*padding-bottom: 105px;*/
+        /*border: 3px solid red;*/
+    }
+    .area-logo{
+        background-color: #D8D8D8;
+        text-align: center;width: 100%;
+        margin-top: 20px;margin-bottom: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .area-abstract{
+        padding: 10px 12px; background-color: #D8D8D8;margin-bottom: 20px;
+    }
+    .area-abstract p{
+        text-indent: 25px;  /*抬头距离*/
+    }
+    .area-abstract img{
+        width: 100%;
+    }
+    .item-interest{
+        text-align: right;padding:10px 20px 4px 20px;
+    }
+    .btn-interest{
+        font-size: 16px;
+        color: white;background-color: #57585A;border:none;padding: 5px 15px;border-radius: 5px;
+    }
+    .btn-interest:active{
+        background-color: #393939;
+    }
+
+    /*在三个复用的代码块的基础在添加样式*/
+    /*.block-disTip,#block-service,#board-personal,.menu-child{
+        background: rgba(62,62,63,1);
+    }*/
+    #board-personal,.area-service{
+        background: rgba(62,62,63,1);
+    }
+    .area-button a{
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+</style>
+<body>
+<!--系列产品的介绍-->
+<div class="block-ctt">
+    <ul>
+        <!--logo-->
+        <div class="area-logo">
+            <img src="../Public/icons/logo.png">
+        </div>
+        <!--一个介绍卡-->
+        <div class="area-abstract">
+            <img style="" src="../Public/images/p2.jpg">
+            <h4>产品名称</h4>
+            <p>为何当我虔诚的祈祷，拂拭那晶莹的泪眼我的灵魂被放际在拐角的街边才明白天涯如此之近，咫尺如此之远那虔诚的灵魂不曾读懂你的泪眼</p>
+            <div class="item-interest">
+                <button class="btn-interest" data-id="15">有興趣</button>
+            </div>
+        </div>
+        <!--一个介绍卡-->
+        <div class="area-abstract">
+            <img style="" src="../Public/images/p2.jpg">
+            <h4>产品名称</h4>
+            <p>为何当我虔诚的祈祷，拂拭那晶莹的泪眼我的灵魂被放际在拐角的街边才明白天涯如此之近，咫尺如此之远那虔诚的灵魂不曾读懂你的泪眼</p>
+            <div class="item-interest">
+                <button class="btn-interest" data-id="15">有興趣</button>
+            </div>
+        </div>
+    </ul>
+    <div style="height: 100px;"></div>
+</div>
+<!--底部菜单（public）-->
+<div class="bottom-menu">
+    <div class="item-pointSer">
+        <img class="btn-pointer" data-status="off" src="../Public/icons/pointI.png">
+    </div>
+    <ul>
+        <li id="btn-index"><div><img src="../Public/icons/home.png" alt="">首頁</div></li>
+        <li id="btn-display" onclick='location.href="abstract.html"'><div><img src="../Public/icons/ripe.png" alt="">陳列架</div></li>
+        <li id="btn-service" data-order="off"><div><img src="../Public/icons/service.png" alt="">客服</div></li>
+        <li id="btn-personal" data-order="off"><div><img src="../Public/icons/user.png" alt="">個人</div></li>
+    </ul>
+</div>
+
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+    $.ajax({url: "../Controller/TempController.php",
+        type: "post",
+        data: {func: "getDisplay"},
+        dataType: "text",
+        async: false,
+        success:function(res){
+            $("body").prepend(res);
+        }
+    });/*同步请求*/
+</script><!--public-->
+<script type="text/javascript" src="../Public/js/issac.js"></script><!--issac类库-->
+<script type="text/javascript" src="../Public/js/public.js"></script>
+<script type="text/javascript">
+    $(".btn-interest").click(function(){
+        var id =$(this).attr("data-id");
+        window.location.href="details.html?id="+id;
+    });
+</script>
+</body>
+</html>

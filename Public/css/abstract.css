@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*html,body{
+    height: 100%;
+}
+body{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3E3E3F;
+}*/
+.block-ctt{
+    line-height: 1.5;
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0;
+    right: 0;
+    /*height: 100%;*/
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    /*padding-bottom: 105px;*/
+    /*border: 3px solid red;*/
+}
+.area-logo{
+    background-color: #D8D8D8;
+    text-align: center;width: 100%;
+    margin-top: 20px;margin-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.area-abstract{
+    padding: 10px 12px; background-color: #D8D8D8;margin-bottom: 20px;
+    /*width: 100%;*/
+}
+.area-abstract p{
+    text-indent: 25px;  /*抬头距离*/
+}
+.area-abstract img{
+    width: 100%;
+}
+.item-interest{
+    text-align: right;padding:10px 20px 4px 20px;
+}
+.btn-interest{
+    font-size: 16px;
+    color: white;background-color: #57585A;border:none;padding: 5px 15px;border-radius: 5px;
+}
+.btn-interest:active{
+    background-color: #393939;
+}
+
+/*在三个复用的代码块的基础在添加样式*/
+/*.block-disTip,#block-service,#board-personal,.menu-child{
+    background: rgba(62,62,63,1);
+}*/
+#board-personal,.area-service{
+    background: rgba(62,62,63,1);
+}
+.area-button a{
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
