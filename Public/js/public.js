@@ -43,7 +43,7 @@ function disTipHide(){
 //异步检测是否有存货
 $.ajaxExistProduct =function (type){
     var url =__back__ +"/Product/findProductByType?pType="+type;
-    // alert(url);
+    // alert(url); 
     $.ajax({
         type: "post",
         url: url,
